@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 /*
 有序数组中找到num
-有序数组中找到>=num最左的位置
 有序数组中找到＜=num最右的位置
 局部最小值问题
 */

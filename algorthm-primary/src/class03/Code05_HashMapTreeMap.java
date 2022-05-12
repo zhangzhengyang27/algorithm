@@ -13,7 +13,7 @@ public class Code05_HashMapTreeMap {
 		}
 	}
 
-	// 可以理解为(K V)表  hash 表增删改查都是O(1)时间
+	// 可以理解为(K V)表  hash 表增删改查都是O(1)时间,但是是一个比较大的常数时间
 	public static void main(String[] args) {
 		HashMap<String, String> map = new HashMap<>();
 		map.put("zuochengyun", "我是左程云");
@@ -21,18 +21,21 @@ public class Code05_HashMapTreeMap {
 		System.out.println(map.containsKey("zuo"));
 		System.out.println(map.get("zuochengyun"));
 
+		// 更新操作
 		map.put("zuochengyun", "他是左程云");
 		System.out.println(map.get("zuochengyun"));
 
 //		map.remove("zuochengyun");
 //		System.out.println(map.containsKey("zuochengyun"));
-//		System.out.println(map.get("zuochengyun"));
+//		System.out.println(map.get("zuochengyun"));  // false
 
+		System.out.println("-----------------------------------------------------");
 		String test1 = "zuochengyun";
 		String test2 = "zuochengyun";
 		System.out.println(map.containsKey(test1));
 		System.out.println(map.containsKey(test2));
 
+		// // 基础类型按值传递
 		HashMap<Integer, String> map2 = new HashMap<>();
 		map2.put(1234567, "我是1234567");
 
@@ -44,6 +47,7 @@ public class Code05_HashMapTreeMap {
 		System.out.println(map2.containsKey(a));   // true
 		System.out.println(map2.containsKey(b));   // true
 
+		// 非基础类型按照应用传递，在HashMap中记录的是内存地址
 		Node node1 = new Node(1);
 		Node node2 = new Node(1);
 		HashMap<Node, String> map3 = new HashMap<>();
