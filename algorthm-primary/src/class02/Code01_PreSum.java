@@ -2,42 +2,43 @@ package class02;
 
 public class Code01_PreSum {
 
-	public static class RangeSum1 {
+    public static class RangeSum1 {
+        private int[] arr;
 
-		private int[] arr;
+        public RangeSum1(int[] array) {
+            arr = array;
+        }
 
-		public RangeSum1(int[] array) {
-			arr = array;
-		}
-		//	遍历的方法
-		public int rangeSum(int L, int R) {
-			int sum = 0;
-			for (int i = L; i <= R; i++) {
-				sum += arr[i];
-			}
-			return sum;
-		}
+        //	遍历的方法
+        public int rangeSum(int L, int R) {
+            int sum = 0;
+            for (int i = L; i <= R; i++) {
+                sum += arr[i];
+            }
+            return sum;
+        }
 
-	}
+    }
 
-	//前缀和
-	public static class RangeSum2 {
+    //前缀和
+    public static class RangeSum2 {
 
-		private int[] preSum;
-		//	构造函数
-		public RangeSum2(int[] array) {
-			int N = array.length;
-			preSum = new int[N];
-			preSum[0] = array[0];
-			for (int i = 1; i < N; i++) {
-				preSum[i] = preSum[i - 1] + array[i];
-			}
-		}
+        private int[] preSum;
 
-		public int rangeSum(int L, int R) {
-			return L == 0 ? preSum[R] : preSum[R] - preSum[L - 1];
-		}
+        //	构造函数
+        public RangeSum2(int[] array) {
+            int N = array.length;
+            preSum = new int[N];
+            preSum[0] = array[0];
+            for (int i = 1; i < N; i++) {
+                preSum[i] = preSum[i - 1] + array[i];
+            }
+        }
 
-	}
+        public int rangeSum(int L, int R) {
+            return L == 0 ? preSum[R] : preSum[R] - preSum[L - 1];
+        }
+
+    }
 
 }

@@ -35,7 +35,7 @@ public class Code03_Comp {
 		}
 	}
 
-	// 返回一个数组arr，arr长度[0,maxLen-1],arr中的每个值[0,maxValue-1]
+	// 返回一个数组arr，arr长度[0,maxLen-1],arr中的每个值[0,maxValue-1]；长度随机、数值随机
 	public static int[] lenRandomValueRandom(int maxLen, int maxValue) {
 		int len = (int) (Math.random() * maxLen);
 		int[] ans = new int[len];
