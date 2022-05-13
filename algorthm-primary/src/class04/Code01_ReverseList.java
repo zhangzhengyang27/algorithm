@@ -24,7 +24,7 @@ public class Code01_ReverseList {
 			value = data;
 		}
 	}
-	//	单链表的逆序
+	//	单链表的逆序  传进来的形参其实是复制了一份的，修改它不影响外面的值
 	public static Node reverseLinkedList(Node head) {
 		Node pre = null;
 		Node next = null;
@@ -191,6 +191,7 @@ public class Code01_ReverseList {
 		for (int i = 0; i < testTime; i++) {
 			Node node1 = generateRandomLinkedList(len, value);
 			List<Integer> list1 = getLinkedListOriginOrder(node1);
+			// 拷贝了一份值node1传递
 			node1 = reverseLinkedList(node1);
 			if (!checkLinkedListReverse(list1, node1)) {
 				System.out.println("Oops1!");
