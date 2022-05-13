@@ -6,7 +6,7 @@ package class07;
 
 搜索二叉树：就是左树比我小，右树比我大
 */
-// 测试链接：https://leetcode.com/problems/balanced-binary-tree
+// 测试链接110：https://leetcode.com/problems/balanced-binary-tree
 public class Code02_BalancedBinaryTree {
 
     public static class TreeNode {
@@ -41,8 +41,11 @@ public class Code02_BalancedBinaryTree {
         Info leftInfo = process(root.left);
 		//  右树是否平衡，和右树的高度
         Info rightInfo = process(root.right);
+        // 比较左树和右树的高度最大值+1；
         int height = Math.max(leftInfo.height, rightInfo.height) + 1;
+        // 判断是否平衡
         boolean isBalanced = leftInfo.isBalanced && rightInfo.isBalanced && Math.abs(leftInfo.height - rightInfo.height) < 2;
+
         return new Info(isBalanced, height);
     }
 

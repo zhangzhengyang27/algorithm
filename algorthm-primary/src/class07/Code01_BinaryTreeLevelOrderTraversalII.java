@@ -25,10 +25,17 @@ public class Code01_BinaryTreeLevelOrderTraversalII {
         if (root == null) {
             return ans;
         }
+        // 队列
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
+        /*
+        * 1、拿出此时队列的size，size有多少2）进行多少回
+        * 2、弹出节点，有左加左，有右加右
+        * 刚进入while的时候，size为1
+        */
+
         while (!queue.isEmpty()) {
-            // int size = queue.size(); queue的size是动态增加的
+            // int size = queue.size(); queue的size是动态增加的 ，后面再一直增加 queue.add(curNode.left);
             int size = queue.size();
             List<Integer> curAns = new LinkedList<>();
             for (int i = 0; i < size; i++) {
