@@ -1,5 +1,6 @@
 package class08;
 
+// 不知道干嘛的
 public class Code01_GetMax {
 
 	public static int flip(int n) {
