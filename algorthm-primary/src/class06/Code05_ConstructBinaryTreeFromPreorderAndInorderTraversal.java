@@ -3,8 +3,9 @@ package class06;
 import java.util.HashMap;
 
 /*
-给定两个整数数组preorder和inorder，其中preorder是二叉树的先序遍历，inorder是同一棵树的中序遍历，
-请构造二叉树并返回其根节点。
+从前序与中序遍历序列构造二叉树
+给定两个整数数组preorder和inorder，其中preorder是二叉树的先序遍历，inorder是同一棵树的中序遍历，请构造二叉树并返回其根节点。
+preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
 */
 //测试链接：https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal
 public class Code05_ConstructBinaryTreeFromPreorderAndInorderTraversal {
@@ -42,8 +43,9 @@ public class Code05_ConstructBinaryTreeFromPreorderAndInorderTraversal {
         while (in[find] != pre[L1]) {
             find++;
         }
-        // find - L2  确定第一组的个数
+        // find - L2  确定第一组的个数  根节点左边到的先序，左边的中序
         head.left = f(pre, L1 + 1, L1 + find - L2, in, L2, find - 1);
+        // 根节点右边到的现需，右边边的中序
         head.right = f(pre, L1 + find - L2 + 1, R1, in, find + 1, R2);
         return head;
     }
@@ -73,6 +75,7 @@ public class Code05_ConstructBinaryTreeFromPreorderAndInorderTraversal {
         if (L1 == R1) {
             return head;
         }
+
         int find = valueIndexMap.get(pre[L1]);
         head.left = g(pre, L1 + 1, L1 + find - L2, in, L2, find - 1, valueIndexMap);
         head.right = g(pre, L1 + find - L2 + 1, R1, in, find + 1, R2, valueIndexMap);

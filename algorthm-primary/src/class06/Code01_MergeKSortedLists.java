@@ -18,7 +18,7 @@ import java.util.PriorityQueue;
 时间复杂度：
 M条链表 总节点N个。则时间复杂度为N*logM
 */
-// 测试链接：https://leetcode.com/problems/merge-k-sorted-lists/
+// 测试链接23：https://leetcode.com/problems/merge-k-sorted-lists/
 public class Code01_MergeKSortedLists {
 
 	public static class ListNode {
@@ -27,7 +27,6 @@ public class Code01_MergeKSortedLists {
 	}
 	// 这是一个链表
 	public static class ListNodeComparator implements Comparator<ListNode> {
-
 		@Override
 		public int compare(ListNode o1, ListNode o2) {
 			return o1.val - o2.val; 
@@ -35,11 +34,14 @@ public class Code01_MergeKSortedLists {
 
 	}
 
+	// 这个数组其实给定的是所有链表的头结点  [[1,4,5],[1,3,4],[2,6]]
+	// [1,1,2]
+	// M个链表，总节点树N  时间复杂度O(NlogM）
 	public static ListNode mergeKLists(ListNode[] lists) {
 		if (lists == null) {
 			return null;
 		}
-		//  小根堆 优先队列
+		//  小根堆 优先队列 小的在上面 出一个进来一个补充
 		PriorityQueue<ListNode> heap = new PriorityQueue<>(new ListNodeComparator());
 		for (int i = 0; i < lists.length; i++) {
 			if (lists[i] != null) {

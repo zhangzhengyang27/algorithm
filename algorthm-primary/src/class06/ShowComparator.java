@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 
+// 比较器
 public class ShowComparator {
 
 	public static class Student {
@@ -79,6 +80,7 @@ public class ShowComparator {
 		Student s4 = new Student("赵六", 3, 9);
 		Student s5 = new Student("左七", 2, 34);
 
+		// Student类型的数组
 		Student[] students = { s1, s2, s3, s4, s5 };
 		printStudents(students);
 		System.out.println("-------------------------");

@@ -4,7 +4,7 @@ package class06;
 给定一个二叉树，找出其最大深度。
 二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。
 */
-// 测试链接：https://leetcode.com/problems/maximum-depth-of-binary-tree
+// 测试链接104：https://leetcode.com/problems/maximum-depth-of-binary-tree
 public class Code04_MaximumDepthOfBinaryTree {
 
 	public static class TreeNode {

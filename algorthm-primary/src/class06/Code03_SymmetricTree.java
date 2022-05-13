@@ -3,7 +3,7 @@ package class06;
 /*
 给你一个二叉树的根节点 root ， 检查它是否轴对称。
 */
-// 测试链接：https://leetcode.com/problems/symmetric-tree
+// 测试链接101：https://leetcode.com/problems/symmetric-tree
 public class Code03_SymmetricTree {
 
 	public static class TreeNode {
